@@ -1,5 +1,5 @@
 import { handleSubmit } from './js/formHandler';
-import { validateForm } from './js/formValidation';
+import { validateForm } from './js/formHandler';
 import { sum } from './js/utils';
 import { validateString } from './js/utils';
 import './styles/resets.scss';

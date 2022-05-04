@@ -20,6 +20,15 @@ export function handleSubmit(event) {
   // check what text was put into the form field
   let formText = document.getElementById('name').value;
 
+  function validateForm() {
+    // let x = document.forms['myForm']['input'].value;
+    let x = document.getElementById('name').value;
+    if (x == '') {
+      alert('Name box must be filled out');
+      return false;
+    }
+  }
+
   let test = { link: formText };
   console.log('::: Form Submitted :::');
   const options = {
