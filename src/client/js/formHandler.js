@@ -1,7 +1,9 @@
+import { isValidHttpUrl } from './formValidation';
+
 export function handleSubmit(event) {
   event.preventDefault();
   const updateUI = async () => {
-    const request = await fetch('/all');
+    const request = await fetch('/sendingDatatoClient');
     try {
       const allData = await request.json();
       document.getElementById('agreement').innerHTML =
@@ -19,16 +21,7 @@ export function handleSubmit(event) {
   };
   // check what text was put into the form field
   let formText = document.getElementById('name').value;
-
-  function validateForm() {
-    // let x = document.forms['myForm']['input'].value;
-    let x = document.getElementById('name').value;
-    if (x == '') {
-      alert('Name box must be filled out');
-      return false;
-    }
-  }
-
+  console.log(formText);
   let test = { link: formText };
   console.log('::: Form Submitted :::');
   const options = {
@@ -39,5 +32,9 @@ export function handleSubmit(event) {
     },
     body: JSON.stringify(test),
   };
-  fetch('/datax', options).then(updateUI());
+  if (isValidHttpUrl(formText)) {
+    fetch('/sendingLink', options).then(updateUI());
+  } else {
+    alert('Xx The text entered is not a valid URL, try again xX');
+  }
 }

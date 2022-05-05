@@ -19,14 +19,10 @@ app.use(cors());
 app.use(express.json());
 console.log(__dirname);
 
-app.post('/datax', function (req, res) {
-  // console.log(req.body);
-
+app.post('/sendingLink', function (req, res) {
   projectUrl = req.body.link;
-
-  // console.log('Asa arata ce primeste: ' + projectUrl);
 });
-app.get('/all', sendData);
+app.get('/sendingDatatoClient', sendData);
 
 function sendData(req, res) {
   //---------------------------GET request to the MeaningCloud API
