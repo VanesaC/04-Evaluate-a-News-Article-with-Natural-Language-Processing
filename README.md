@@ -1,4 +1,4 @@
-# EvaluateNewsArticlewNLP
+# Evaluate a News Article with Natural Language Processing
  
 ## Overview
 This project represents a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. 
@@ -20,7 +20,11 @@ Users can define their own sentiment model to adapt the analysis to their subdom
 
 
 ## Instructions
-In order to test the project, the scripts: 'start', 'build-prod', 'build-dev' and 'testj' from the package.json file need to be run with npm
+-download all files from github
+-open two command prompts (git bash) in the project folder and using npm run the following scripts: 'npm run start' and 'npm run build-prod'
+-open http://localhost:8081/
+-in the text box enter a news article in english and then click submit. 
+After this, you should receive the sentiment analysis from the API in the form of three parameters: AGREEMENT, CONFIDENCE AND IRONY.
 
 ##List of what software, firmware and hardware you may require
 Webpack, express and jest are used. For the plugins, you can find the full list on the devDependencies list, in the package.json file. 
